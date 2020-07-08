@@ -9,6 +9,7 @@ class OutputFileManagerTest(unittest.TestCase):
     """
     Test for the OutputFileManager class
     """
+
     def test_print(self):
         out_file = tempfile.NamedTemporaryFile()
         out_file_path = os.path.join(tempfile.gettempdir(), out_file.name)
@@ -37,6 +38,9 @@ class OutputFileManagerTest(unittest.TestCase):
 
 
 class TemplateTest(unittest.TestCase):
+    """
+    Test for the Template class
+    """
 
     def test_replace_correct(self):
         out_file = tempfile.NamedTemporaryFile()
@@ -53,8 +57,6 @@ class TemplateTest(unittest.TestCase):
                 line_expected = f_expected.readline()
                 self.assertEqual(line_expected, line_generated)
 
-    def test_bazel(self):
-        self.fail()
 
 if __name__ == '__main__':
     unittest.main()
